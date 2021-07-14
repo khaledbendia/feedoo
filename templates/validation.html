@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="{% static 'logo.png' %}" rel="icon">
+	<link href="{% static 'styleValidation.css' %}" rel="stylesheet">
+	<link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css'>
+
+</head>
+<body>
+	<header>
+		<div class="d-flex mx-auto position-relative">
+			<img id="logo" src="{% static 'logoGreen.png' %}">
+			<div id="stepsContainer" class="d-flex">
+				<div id="steps"  class="align-self-center d-flex ">
+					<div class="text-center stepSelected">
+						Information
+					</div>
+					<div class="text-center">
+						Adresse
+					</div>
+					<div class="text-center">
+						Date
+					</div>
+					<div class="text-center">
+						Validation
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</header>
+
+	<section id="panelChanger" class="mx-auto mt-3 mb-3 p-4">
+
+		<div id="informationPanel" >
+			<div id="informationLine1" class="d-flex justify-content-between">
+				<div>
+					<label class="form-label text-muted">Nom</label>
+					<input id="nom" type="text" class="form-control" placeholder="Ex: Ali">
+					<div  class="invalid-feedback">
+						Nom erroné.
+					</div>
+				</div>
+				<div >
+					<label class="form-label text-muted">Prénom</label>
+					<input id="prenom" type="text" class="form-control" placeholder="Ex: Mohamed">
+					<div  class="invalid-feedback">
+						Prénom erroné.
+					</div>
+				</div>
+			</div>
+			<div id="informationLine2" class="mt-3">
+				<label class="form-label text-muted">Téléphone mobile</label>
+				<input id="telephone" type="text" class="form-control" placeholder="Ex: 0771112233">
+				<div  class="invalid-feedback">
+					Téléphone mobile erroné.
+				</div>
+			</div>
+			<div id="informationBottom" class="d-flex mt-3 flex-row-reverse">
+				<button id="informationSuivant" type="button" class="btn text-white align-self-center">Suivant</button>
+			</div>
+		</div>
+
+		<div id="adressePanel" class="d-none">
+			<div class="mt-3">
+				<label class="form-label text-muted">Adresse de livraison</label>
+				<div id="map" class="mt-2 mb-5 mx-auto" class=""></div>
+			</div>
+			
+			<div  class="mt-3">
+				<label class="form-label text-muted">Plus de spécifications sur votre adresse (optionel)</label>
+				<textarea id="plusDeSpecification" class="form-control" placeholder="..."></textarea>
+			</div>
+			<div id="adresseBottom" class="d-flex mt-3 justify-content-between">
+				<button id="adressePrecedent" type="button" class="btn text-white align-self-center">Précédent</button>
+				<button id="adresseSuivant" type="button" class="btn text-white align-self-center">Suivant</button>
+			</div>
+		</div>
+
+		<div id="datePanel" class="d-none">
+			<div id="dateList" class="mb-2 mr-5 ml-5 mx-auto w-50">
+				<label class="form-label text-muted">Date de livraison</label>
+				
+				
+			</div>
+			<div id="adresseBottom" class="d-flex mt-3 justify-content-between">
+				<button id="datePrecedent" type="button" class="btn text-white align-self-center">Précédent</button>
+				<button id="dateSuivant" type="button" class="btn text-white align-self-center">Suivant</button>
+			</div>
+		</div>
+
+		<div id="validationPanel" class="d-none">
+
+			<div class="m-4">
+				<h3>Panier</h3>
+				<div class="d-flex">
+					<div>TOTAL :&nbsp</div>
+					<div id="validationTotal" class="text-muted"></div>
+				</div>
+				<h3 class="mt-3">Information générale</h3>
+				<div class="d-flex">
+					<div>NOM :&nbsp</div>
+					<div id="validationNom" class="text-muted"></div>
+				</div>
+				<div class="d-flex">
+					<div>PRENOM :&nbsp</div>
+					<div id="validationPrenom" class="text-muted"></div>
+				</div>
+				<div class="d-flex">
+					<div>TELEPHONE :&nbsp</div>
+					<div id="validationTelephone" class="text-muted"></div>
+				</div>
+				<h3 class="mt-3">Adresse de livraison</h3>
+				<div class="d-flex">
+					<div>Emplacement :&nbsp</div>
+					<div  class="text-muted">Doit etre a oran</div>
+				</div>
+				<div class="d-flex">
+					<div>Plus de spécifications sur votre adresse :&nbsp</div>
+					<div id="validationPlusDeSpecification"  class="text-muted"></div>
+				</div>
+				<h3 class="mt-3">Date de livraison</h3>
+				<div class="d-flex">
+					<div id="validationDate" class="text-muted">7:00 à 9:00 Le 12 dec 2021</div>
+				</div>
+				<div class="form-check mt-4">
+					<input id="agree" class="form-check-input" type="checkbox" value="">
+					<label class="form-check-label" for="invalidCheck2">
+						Je confirme.
+					</label>
+					<div  class="invalid-feedback">
+						Vous devez cocher la case.
+					</div>
+				</div>
+				<div class="mt-4">
+					En cliquant sur valider vous allez recevoir un appel sur votre téléphone pour confirmer votre commande.
+				</div>
+				<div class="mt-2">
+					<strong>Note :</strong> Parfois les prix des produits changent, on vous disent avant la livraison.
+				</div>
+				
+			</div>
+
+			<div id="adresseBottom" class="d-flex mt-3 justify-content-between">
+				<button id="validationPrecedent" type="button" class="btn text-white align-self-center">Précédent</button>
+				<button id="validationSuivant" type="button" class="btn text-white align-self-center">Valider</button>
+			</div>
+		</div>
+	</section>
+
+	<div id="OK_Modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Merci pour votre confiance</h5>
+				</div>
+				<div class="modal-body">
+					Nous allons vous contacter
+				</div>
+				<div class="modal-footer">					
+					<button id="OK" type="button" class="btn btn-primary w-100" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js" defer></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+	https://firebase.google.com/docs/web/setup#available-libraries -->
+
+	<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+  	apiKey: "AIzaSyCRcSQ1GxEox1pd_OYsSbwBJKTDyj2VwIQ",
+  	authDomain: "feedoo-8c622.firebaseapp.com",
+  	projectId: "feedoo-8c622",
+  	storageBucket: "feedoo-8c622.appspot.com",
+  	messagingSenderId: "602095349042",
+  	appId: "1:602095349042:web:d7f4a1f949191d102efb2b"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script language="javascript">var STATIC_URL = "{{ STATIC_URL|escapejs }}";</script>
+<script type="text/javascript" src="{% static 'scriptValidation.js' %}"></script>
+<script type="text/javascript" src="{% static 'scriptValidationMap.js' %}"></script>
+
+
+</html>

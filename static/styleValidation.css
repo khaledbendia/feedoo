@@ -1,0 +1,77 @@
+header
+{
+	background-color: white;
+}
+body
+{
+	background-color: #F9F5ED;
+	
+}
+header>div
+{
+	width: 1000px;
+}
+textarea
+{
+	resize: none;
+}
+
+#logo
+{
+	height: 60px;
+	cursor: pointer;
+}
+#stepsContainer
+{
+	position: absolute;
+	width: 40%;
+	left: 30%;
+	height: 100%;
+}
+#steps
+{
+	width: 100%;
+	border-radius: 10px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid grey;
+	overflow: hidden;
+}
+#steps>div
+{
+	width: 33%;
+}
+.stepSelected
+{
+	background-color: #016438;
+	color: white;
+}
+/*******************/
+#panelChanger
+{
+	background-color: white;
+	width: 900px;
+	border-radius: 10px;
+	
+}
+#panelChanger>div
+{
+
+}
+#panelChanger button
+{
+	background-color: #016438
+}
+/*****************/
+#informationLine1>div,#informationLine2
+{
+	width: 45%;
+}
+/*****************/
+#map
+{
+	width: 80%;
+	height: 400px;
+}
+/****************/
+

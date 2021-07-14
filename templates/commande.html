@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="{% static 'logo.png' %}" rel="icon">
+	<link href="{% static 'styleCommande.css' %}" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="d-flex justify-content-between mx-auto">
+			<img id="logo" src="{% static 'logoGreen.png' %}">
+			<div class="d-flex">
+				<button id="showPanier" type="button" class="btn btn-info text-white m-1 align-self-center">Panier - <strong id="panierSize">0</strong></button>
+			</div>
+		</div>
+	</header>
+	<section id="allContainer" class="mx-auto">
+
+		<div id="categoriesContainer" class="d-flex text-center">
+			<div class="buttonClass w-50 categorySelected">Légume</div>
+			<div class="buttonClass w-50">Fruit</div>
+		</div>
+		
+		<div id="spinnerContainer" class="d-flex justify-content-center m-5">
+			<div id="spinner" class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+			</div>
+		</div>
+
+		<div id="errorContainer" class="d-flex justify-content-center mt-5  d-none">
+			<img src="{% static 'error.png' %}">
+		</div>
+
+		<div id="itemsList" class="d-flex flex-wrap" >
+			
+		</div>
+
+	</section>
+
+
+	<div id="panierModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Panier</h5>
+				</div>
+				<div class="modal-body">
+
+					<div id="spinnerContainerModal" class="d-flex justify-content-center m-5">
+						<div id="spinner" class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+						</div>
+					</div>
+
+					<div id="errorContainerModal" class="d-flex justify-content-center mt-5  d-none">
+						<img src="{% static 'error.png' %}">
+					</div>
+					<dir id="panierVide" class="text-muted m-5 text-center d-none" style="font-size: 1.5em">
+						Votre panier est vide.
+					</dir>
+
+					<div id="panierItemsList">
+
+
+
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="w-100 text-muted">SOUS-TOTAL : <div id="sous_total" class="d-inline text-muted">0 DA</div></div>
+					<div class="w-100 text-muted">LIVRAISON : <div id="livraison" class="d-inline text-muted">300 DA</div></div>
+					<div class="w-100 text-center text-muted">TOTAL : <div id="total" class="d-inline text-muted">300 DA</div></div>
+					
+					<button id="commanderButton" type="button" class="btn btn-primary w-100" data-dismiss="modal">Commander</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+	https://firebase.google.com/docs/web/setup#available-libraries -->
+
+	<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+  	apiKey: "AIzaSyCRcSQ1GxEox1pd_OYsSbwBJKTDyj2VwIQ",
+  	authDomain: "feedoo-8c622.firebaseapp.com",
+  	projectId: "feedoo-8c622",
+  	storageBucket: "feedoo-8c622.appspot.com",
+  	messagingSenderId: "602095349042",
+  	appId: "1:602095349042:web:d7f4a1f949191d102efb2b"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script language="javascript">var STATIC_URL = "{{ STATIC_URL|escapejs }}";</script>
+<script type="text/javascript" src="{% static 'scriptCommande.js' %}"></script>
+
+
+</html>

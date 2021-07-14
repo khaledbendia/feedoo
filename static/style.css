@@ -1,0 +1,72 @@
+header
+{
+/*016438*/
+/*0DCAF0*/
+background-color: white;
+}
+body
+{
+
+background-color: #F9F5ED;
+}
+button:focus{
+    outline:0;
+    box-shadow: none !important;
+}
+#nosAvantages:hover,#notreConcept:hover
+{
+	background-color: #ebebeb;
+}
+header>div
+{
+	width: 1000px;
+}
+#logo
+{
+	height: 60px;
+	cursor: pointer;
+}
+#dataOverImageContainer
+{
+	z-index: 1000;
+	color: white;
+	height: 500px;
+	width: 100%;
+}
+#dataOverImageContainer h1
+{
+	margin-top: 100px;
+}
+#imageContainer
+{
+	height: 500px;
+	overflow: hidden;
+}
+
+#imageContainer>img
+{
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+/******************/
+footer
+{
+	height: 500px;
+	background-color: #353F47;
+}
+#imageFooterContainer
+{
+	height: 250px;
+	overflow: hidden;
+}
+#imageFooterContainer>img
+{
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+.imageFooterSocialContainer>img
+{
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+}
