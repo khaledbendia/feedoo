@@ -148,13 +148,14 @@ $(function(){
 });
 
 
-var globalURL=/*STATIC_URL;*/"http://127.0.0.1:8000/";
+var globalURL = "http://feedoo.herokuapp.com/";
 var panier;
 
 
 function getItemsByType(_type)
 {
 	$("#itemsList .item").remove();
+	$("#errorContainer").addClass("d-none");
 	$("#spinnerContainer").removeClass("d-none");
 	$.ajax({
 		url: globalURL+"getItems/",

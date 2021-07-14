@@ -82,17 +82,11 @@ WSGI_APPLICATION = 'Project_feedoo.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'phfzhebolybaab',
-        'HOST':'ec2-54-91-188-254.compute-1.amazonaws.com',
-        'PORT':5432,
-        'USER':'d7pne0v43p1sbm',
-        'PASSWORD':'732941613b09f85ded32ce175395b0fa3f1514ff0523bdfeed93661fef9be281'
     }
 }
-
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES["default"].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
