@@ -39,7 +39,7 @@ $(function(){
 		var v = validationAdresse();
 		if(v)
 		{
-			//getDates();
+			getDates();
 			adressePanel.addClass("d-none");
 			datePanel.removeClass("d-none");
 			$("#steps>div:nth-child(3)").addClass("stepSelected");
