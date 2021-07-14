@@ -8,7 +8,7 @@ var dateItem = $("<div class='dateItem form-check'>"+
 var dateSelectedValue;
 $(function(){validationPanelShow();
 	$("#logo").on("click",function(){
-		window.location = "http://127.0.0.1:8000/";
+		window.location = globalURL;
 	});
 
 	getLocalStorage();
@@ -242,7 +242,6 @@ function sendRequest()
 			date : dateSelectedValue
 		},
 		success: function(data){
-			alert(data);
 			$("#OK_Modal").modal("show");
 		},
 		error:function(error)

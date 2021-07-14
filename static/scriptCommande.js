@@ -58,7 +58,7 @@ var panierItem = $("<div class='panierItem d-flex mt-1 pb-1'>"+
 	"</div>");
 $(function(){
 	$("#logo").on("click",function(){
-		window.location = "http://127.0.0.1:8000/";
+		window.location = globalURL;
 	});
 	//item list quantity
 	$("#itemsList").delegate(".addButton","click",function(e){
