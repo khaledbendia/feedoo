@@ -1,5 +1,4 @@
-var globalURL=/*STATIC_URL;*/"http://127.0.0.1:8000/";
-
+var globalURL = "http://feedoo.herokuapp.com/";
 var dateItem = $("<div class='dateItem form-check'>"+
 	"<input class='form-check-input' type='radio' name='radiosDates'  value='7:00 à 9:00 Le 12 dec 2021'>"+
 	"<label class='form-check-label' >"+
