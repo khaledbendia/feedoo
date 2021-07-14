@@ -143,6 +143,8 @@ function validationDate()
 function getDates()
 {
 	$("#dateList .dateItem").remove();
+	$("#dateSpinnerContainer").removeClass("d-none");
+	$("#dateErrorContainer").addClass("d-none");
 	$.ajax({
 		url: globalURL+"getDates/",
 		dataType: 'text',
@@ -150,7 +152,8 @@ function getDates()
 		data: {},
 		success: function(data){
 			var json = JSON.parse(data);
-
+			$("#dateSpinnerContainer").addClass("d-none");
+			$("#dateErrorContainer").addClass("d-none");
 			for(var i=0;i<json.length;i++)
 			{
 				var item = $(dateItem).clone();
@@ -164,7 +167,7 @@ function getDates()
 		},
 		error:function(error)
 		{
-
+			$("#dateErrorContainer").removeClass("d-none");
 		}
 	});
 }

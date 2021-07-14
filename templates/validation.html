@@ -84,7 +84,14 @@
 		<div id="datePanel" class="d-none">
 			<div id="dateList" class="mb-2 mr-5 ml-5 mx-auto w-50">
 				<label class="form-label text-muted">Date de livraison</label>
-				
+				<div id="dateSpinnerContainer" class="d-flex justify-content-center m-5">
+					<div id="spinner" class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+					</div>
+				</div>
+
+				<div id="dateErrorContainer" class="d-flex justify-content-center mt-5  d-none">
+					<img src="{% static 'error.png' %}">
+				</div>
 				
 			</div>
 			<div id="adresseBottom" class="d-flex mt-3 justify-content-between">
