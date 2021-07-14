@@ -80,17 +80,16 @@ WSGI_APPLICATION = 'Project_feedoo.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'dfikuag56sn4bm',
-        'HOST':'ec2-3-89-0-52.compute-1.amazonaws.com',
+        'NAME':'phfzhebolybaab',
+        'HOST':'ec2-54-91-188-254.compute-1.amazonaws.com',
         'PORT':5432,
-        'USER':'aeatshcaipkkus',
-        'PASSWORD':'b1deb64f59b3686614b3a720d7a3fa83b831621de4123a10564c1c4a5afc15ad'
+        'USER':'d7pne0v43p1sbm',
+        'PASSWORD':'732941613b09f85ded32ce175395b0fa3f1514ff0523bdfeed93661fef9be281'
     }
 }
 
