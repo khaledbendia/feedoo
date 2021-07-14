@@ -16,6 +16,7 @@ from main.models import item, date, commande
 def index(request):
     template = loader.get_template('index.html')
     context = {}
+    print(request.META['HTTP_USER_AGENT'])
     return HttpResponse(template.render(context, request))
 
 @csrf_exempt

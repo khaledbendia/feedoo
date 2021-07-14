@@ -101,6 +101,8 @@ $(function(){
 		$("#panierModal").modal('show');
 		getPanierItems();
 	});
+	
+	
 	$("#panierModal").delegate(".panierItemQuantityPlus","click",function(e){
 		var q = parseInt($(this).closest(".panierItemChangeQuantity").find(".panierItemQuantityValue").html())+1;
 		
@@ -139,12 +141,18 @@ $(function(){
 			}
 		}
 	});
+	$("#hideModalButton").on("click",function(e){
+		$("#panierModal").modal('hide');
+	});
 	/*************/
+
 	getItemsByType("légume");
 	if(localStorage.getItem("panier") !== null)
 	{
 		$("#panierSize").html(JSON.parse(localStorage["panier"]).length);	
 	}
+
+
 });
 
 

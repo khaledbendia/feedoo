@@ -27,6 +27,7 @@ textarea
 	width: 40%;
 	left: 30%;
 	height: 100%;
+
 }
 #steps
 {
@@ -49,6 +50,7 @@ textarea
 /*******************/
 #panelChanger
 {
+	margin-top: 30px;
 	background-color: white;
 	width: 900px;
 	border-radius: 10px;
@@ -74,4 +76,11 @@ textarea
 	height: 400px;
 }
 /****************/
-
+#dateList
+{
+	width: 50%;
+}
+#dateErrorContainer >img
+{
+	max-width: 150px; 
+}

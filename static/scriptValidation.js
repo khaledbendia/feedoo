@@ -6,7 +6,7 @@ var dateItem = $("<div class='dateItem form-check'>"+
 	"</label>"+
 	"</div>");
 var dateSelectedValue;
-$(function(){validationPanelShow();
+$(function(){
 	$("#logo").on("click",function(){
 		window.location = globalURL;
 	});
@@ -39,7 +39,7 @@ $(function(){validationPanelShow();
 		var v = validationAdresse();
 		if(v)
 		{
-			getDates();
+			//getDates();
 			adressePanel.addClass("d-none");
 			datePanel.removeClass("d-none");
 			$("#steps>div:nth-child(3)").addClass("stepSelected");
@@ -66,6 +66,7 @@ $(function(){validationPanelShow();
 
 
 	$("#validationPrecedent").on('click',function(){
+		validationPanelShow();
 		datePanel.removeClass("d-none");
 		validationPanel.addClass("d-none");
 		$("#steps>div:nth-child(4)").removeClass("stepSelected");
@@ -167,6 +168,7 @@ function getDates()
 		},
 		error:function(error)
 		{
+			$("#dateSpinnerContainer").addClass("d-none");
 			$("#dateErrorContainer").removeClass("d-none");
 		}
 	});
