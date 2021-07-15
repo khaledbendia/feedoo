@@ -57,10 +57,14 @@ $(function(){
 	});
 	$("#dateSuivant").on('click',function(){
 		dateSelectedValue = validationDate();
-		validationPanelShow();
-		datePanel.addClass("d-none");
-		validationPanel.removeClass("d-none");
-		$("#steps>div:nth-child(4)").addClass("stepSelected");
+		if(dateSelectedValue!=null)
+		{
+			validationPanelShow();
+			datePanel.addClass("d-none");
+			validationPanel.removeClass("d-none");
+			$("#steps>div:nth-child(4)").addClass("stepSelected");
+		}
+		
 	});
 
 

@@ -60,7 +60,7 @@ textarea
 {
 
 }
-#panelChanger button
+#panelChanger button:not(#panelChanger #map button)
 {
 	background-color: #016438
 }

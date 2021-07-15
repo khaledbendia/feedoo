@@ -1,6 +1,6 @@
 var marker;
-var center = [ -0.631281,35.705048];
-function mapContent()
+var center = [ 35.705048,-0.631281];
+/*function mapContent()
 {
     if(localStorage.getItem("LngLat") !== null)
     {
@@ -32,4 +32,36 @@ map.addControl(new tt.FullscreenControl())
             marker.setLngLat(lngLat);
         }
         map.on('move',markerChangePos);
+        
+    }*/
+    function mapContent()
+    {
+        mapboxgl.accessToken = 'pk.eyJ1Ijoia2hhbGVkYmVuZGlhIiwiYSI6ImNrcjRycTU0ZTJ5NHIycHFweWZibG0yMGUifQ.fgzEZYCOPmamVjLbNCuPiw';
+        if(localStorage.getItem("LngLat") !== null)
+        {
+            center = JSON.parse(localStorage["LngLat"]);
+            $("#plusDeSpecification").val(localStorage["plusDeSpecification"]);
+        }
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center : center,
+            zoom : 15
+        });
+        map.addControl(new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true,
+            showUserLocation : false
+        }));
+        marker = new mapboxgl.Marker()
+        .setLngLat(center)
+        .addTo(map);
+        map.on('move', function(e) {
+            marker.setLngLat(map.getCenter())
+
+        });
+        
+
     }

@@ -9,7 +9,8 @@
 	<link href="{% static 'logo.png' %}" rel="icon">
 	<link href="{% static 'styleValidation.css' %}" rel="stylesheet">
 	<link href="{% static 'styleValidation_smallerThen_1100.css' %}" rel="stylesheet">
-	<link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css'>
+
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
 
 </head>
 <body>
@@ -161,7 +162,7 @@
 		</div>
 	</section>
 
-	<div id="OK_Modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div id="OK_Modal" class="modal fade modal-dialog-centered" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -178,35 +179,14 @@
 	</div>
 
 </body>
-<script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js" defer></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-	https://firebase.google.com/docs/web/setup#available-libraries -->
 
-	<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-  	apiKey: "AIzaSyCRcSQ1GxEox1pd_OYsSbwBJKTDyj2VwIQ",
-  	authDomain: "feedoo-8c622.firebaseapp.com",
-  	projectId: "feedoo-8c622",
-  	storageBucket: "feedoo-8c622.appspot.com",
-  	messagingSenderId: "602095349042",
-  	appId: "1:602095349042:web:d7f4a1f949191d102efb2b"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
 
-<script language="javascript">var STATIC_URL = "{{ STATIC_URL|escapejs }}";</script>
-   <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps-web.min.js'></script>
-<script type='text/javascript' src="{% static 'tomtom/mobile-or-tablet.js' %}"></script>
-    <script type='text/javascript' src="{% static 'tomtom/formatters.js' %}"></script>
 <script type="text/javascript" src="{% static 'scriptValidation.js' %}"></script>
 <script type="text/javascript" src="{% static 'scriptValidationMap.js' %}"></script>
 
