@@ -181,7 +181,7 @@ function validationPanelShow()
 {
 	var panier = JSON.parse(localStorage["panier"]);
 	$("#validationSpinnerContainer").removeClass("d-none");
-	$("#validationResult").addClass("d-none");
+	$("#validationResult").addClass("invisible");
 
 
 	$("#validationPanel input").prop("checked",false);
@@ -196,7 +196,7 @@ function validationPanelShow()
 		},
 		success: function(data){
 			$("#validationSpinnerContainer").addClass("d-none");
-			$("#validationResult").removeClass("d-none");
+			$("#validationResult").removeClass("visible");
 
 			$("#validationTotal").html(data+" DA");
 			$("#validationNom").html(localStorage["nom"]);
