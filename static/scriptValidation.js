@@ -196,7 +196,7 @@ function validationPanelShow()
 		},
 		success: function(data){
 			$("#validationSpinnerContainer").addClass("d-none");
-			$("#validationResult").removeClass("visible");
+			$("#validationResult").removeClass("invisible");
 
 			$("#validationTotal").html(data+" DA");
 			$("#validationNom").html(localStorage["nom"]);

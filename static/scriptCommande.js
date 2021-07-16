@@ -99,7 +99,7 @@ $(function(){
 	// panier
 	$("#showPanier").on("click",function(e){
 		$("#panierModal").modal('show');
-		//getPanierItems();
+		getPanierItems();
 	});
 	
 	
