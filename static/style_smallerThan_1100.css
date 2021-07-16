@@ -2,10 +2,11 @@
 { 
 
 
-button
+.commancer
 {
-  font-size: 0.5em;
+	font-size: 15px;
 }
+
 header>div
 {
   width: 100%;
@@ -20,10 +21,21 @@ header>div
 {
   height: 400px;
 }
-#dataOverImageContainer *
+#dataOverImageContainer h1
+{
+  font-size: 2em;
+}
+#dataOverImageContainer h2
 {
   font-size: 1.2em;
 }
 
-
+#commentCamarcheContainer h1,#lesAvantagesContainer h1,
+{
+  font-size: 1.5em;
+}
+#commentCamarcheContainer div,#lesAvantagesContainer div
+{
+  font-size: 0.8em;
+}
 }

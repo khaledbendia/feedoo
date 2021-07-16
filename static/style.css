@@ -13,6 +13,12 @@ button:focus{
     outline:0;
     box-shadow: none !important;
 }
+button{
+	padding: 8px;
+    border: none;
+    display: inline-block;
+    border-radius: 5px;
+}
 #nosAvantages:hover,#notreConcept:hover
 {
 	background-color: #ebebeb;

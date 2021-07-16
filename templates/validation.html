@@ -37,7 +37,7 @@
 		</div>
 	</header>
 
-	<section id="panelChanger" class="mx-auto mb-3 p-4">
+	<section id="panelChanger" class="mx-auto p-4">
 
 		<div id="informationPanel" >
 			<div id="informationLine1" class="d-flex justify-content-between">
@@ -103,9 +103,12 @@
 			</div>
 		</div>
 
-		<div id="validationPanel" class="d-none">
-
-			<div class="m-4">
+		<div id="validationPanel" class="position-relative d-none">
+			<div id="validationSpinnerContainer" class="d-flex justify-content-center  position-aboslute">
+					<div id="spinner" class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
+					</div>
+			</div>
+			<div id="validationResult" class="m-4 invisible">
 				<h3>Panier</h3>
 				<div class="d-flex">
 					<div>TOTAL :&nbsp</div>

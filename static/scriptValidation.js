@@ -180,6 +180,9 @@ function getDates()
 function validationPanelShow()
 {
 	var panier = JSON.parse(localStorage["panier"]);
+	$("#validationSpinnerContainer").removeClass("d-none");
+	$("#validationResult").addClass("d-none");
+
 
 	$("#validationPanel input").prop("checked",false);
 	$("#validationDate").html(dateSelectedValue);
@@ -192,6 +195,9 @@ function validationPanelShow()
 			quantities : getPanierQuantity(panier)
 		},
 		success: function(data){
+			$("#validationSpinnerContainer").addClass("d-none");
+			$("#validationResult").removeClass("d-none");
+
 			$("#validationTotal").html(data+" DA");
 			$("#validationNom").html(localStorage["nom"]);
 			$("#validationPrenom").html(localStorage["prenom"]);

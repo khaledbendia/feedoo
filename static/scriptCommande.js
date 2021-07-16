@@ -99,7 +99,7 @@ $(function(){
 	// panier
 	$("#showPanier").on("click",function(e){
 		$("#panierModal").modal('show');
-		getPanierItems();
+		//getPanierItems();
 	});
 	
 	
@@ -138,8 +138,10 @@ $(function(){
 			if(JSON.parse(localStorage["panier"]).length!=0)
 			{
 				window.location = globalURL+"validation/";
+				return;
 			}
 		}
+		alert("Votre panier est vide");
 	});
 	$("#hideModalButton").on("click",function(e){
 		$("#panierModal").modal('hide');
