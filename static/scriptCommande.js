@@ -148,7 +148,7 @@ $(function(){
 	});
 	/*************/
 
-	getItemsByType("légume");
+	//getItemsByType("légume");
 	if(localStorage.getItem("panier") !== null)
 	{
 		$("#panierSize").html(JSON.parse(localStorage["panier"]).length);	

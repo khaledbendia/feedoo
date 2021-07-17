@@ -15,24 +15,32 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main import views
 
+import adminApp
+from main import views as main_views
+from adminApp import views as adminApp_views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', views.index),
-    path('commande/', views.commande),
-    path('validation/', views.validation),
+    path('', main_views.index),
+    path('commande/', main_views.commande),
+    path('validation/', main_views.validation),
 
 
-    path('getItems/', views.getItems),
-    path('addItem/', views.addItem),
-    path('getPanierItems/', views.getPanierItems),
+    path('getItems/', main_views.getItems),
+    path('addItem/', main_views.addItem),
+    path('getPanierItems/', main_views.getPanierItems),
 
-    path('getDates/', views.getDates),
-    path('addDate/', views.addDate),
+    path('getDates/', main_views.getDates),
+    path('addDate/', main_views.addDate),
 
-    path('getTotalPanier/', views.getTotalPanier),
+    path('getTotalPanier/', main_views.getTotalPanier),
 
-    path('sendRequest/', views.sendRequest),
+    path('sendRequest/', main_views.sendRequest),
+
+
+
+    ################
+    path('adminApp/', adminApp_views.index),
+
 ]
