@@ -9,7 +9,7 @@ from django.core import serializers
 from django.shortcuts import render
 
 # Create your views here.
-from main.models import item, date, commande
+from main.models import item, date, commande as _commande
 
 
 @csrf_exempt
@@ -36,7 +36,7 @@ def getItems(request):
         available = item.objects.all()
     else:
         type = request.POST['type']
-        available = item.objects.filter(type=type)
+        available = item.objects.filter(type=type,dispo=1)
     data = serializers.serialize('json', available)
     return HttpResponse(data, 'json')
 @csrf_exempt
@@ -62,10 +62,7 @@ def getDates(request):
     available = date.objects.all()
     data = serializers.serialize('json', available)
     return HttpResponse(data, 'json')
-@csrf_exempt
-def addDate(request):
-    date.objects.create(range = "17:00 à 19:00 Le 12 dec 2021")
-    return HttpResponse("ok")
+
 
 
 @csrf_exempt
@@ -131,7 +128,7 @@ def sendRequest(request):
     comm["plusDeSpecification"] = request.POST["plusDeSpecification"]
     comm["date"] = request.POST["date"]
 
-    #commande.objects.create(detail = str(comm))
+    _commande.objects.create(detail =str(comm))
 
     return HttpResponse(str(comm))
 

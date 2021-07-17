@@ -1,0 +1,10 @@
+.produit
+{
+	border: 2px solid black;
+	padding: 5px;
+	display: inline-block;
+}
+#addedProduit
+{
+	border: 2px solid red
+}

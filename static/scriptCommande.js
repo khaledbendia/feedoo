@@ -158,7 +158,7 @@ $(function(){
 });
 
 
-var globalURL = "http://feedoo.herokuapp.com/";
+var globalURL =/*"http://127.0.0.1:8000/"*/ "http://feedoo.herokuapp.com/";
 var panier;
 var xhr;
 

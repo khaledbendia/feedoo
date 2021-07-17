@@ -32,7 +32,7 @@ urlpatterns = [
     path('getPanierItems/', main_views.getPanierItems),
 
     path('getDates/', main_views.getDates),
-    path('addDate/', main_views.addDate),
+
 
     path('getTotalPanier/', main_views.getTotalPanier),
 
@@ -41,6 +41,18 @@ urlpatterns = [
 
 
     ################
-    path('adminApp/', adminApp_views.index),
+    path('adminApp/', adminApp_views.adminApp),
+    path('adminAppCommande/', adminApp_views.adminAppCommande),
+
+    path('adminApp_dateChanger/', adminApp_views.adminApp_dateChanger),
+    path('adminApp_getAllItems/', adminApp_views.adminApp_getAllItems),
+    path('adminApp_addItem/', adminApp_views.adminApp_addItem),
+
+    path('adminApp_updateItem/', adminApp_views.adminApp_updateItem),
+    path('adminApp_deleteItem/', adminApp_views.adminApp_deleteItem),
+
+
+
+    path('adminApp_getCommandeList/', adminApp_views.adminApp_getCommandeList),
 
 ]

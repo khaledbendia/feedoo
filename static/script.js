@@ -1,5 +1,5 @@
 $(function(){
-	var globalURL = "http://feedoo.herokuapp.com/";
+var globalURL =/*"http://127.0.0.1:8000/"*/ "http://feedoo.herokuapp.com/";
 	$(".commancer").on("click",function(){
 		window.location = globalURL+"commande/";
 		
@@ -16,5 +16,11 @@ $(function(){
 	});
 	$("#logo").on("click",function(){
 		window.location = globalURL;
+	});
+	$("#imgFacebook").on("click",function(){
+		window.location = "https://www.facebook.com/FeedooStore";
+	});
+	$("#imgInstagram").on("click",function(){
+		window.location = "https://www.instagram.com/feedooStore/";
 	});
 })
