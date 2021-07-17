@@ -148,7 +148,7 @@ $(function(){
 	});
 	/*************/
 
-	//getItemsByType("légume");
+	getItemsByType("légume");
 	if(localStorage.getItem("panier") !== null)
 	{
 		$("#panierSize").html(JSON.parse(localStorage["panier"]).length);	
@@ -160,14 +160,16 @@ $(function(){
 
 var globalURL = "http://feedoo.herokuapp.com/";
 var panier;
-
+var xhr;
 
 function getItemsByType(_type)
 {
 	$("#itemsList .item").remove();
 	$("#errorContainer").addClass("d-none");
 	$("#spinnerContainer").removeClass("d-none");
-	$.ajax({
+	if(xhr!=null)
+		xhr.abort();
+	xhr = $.ajax({
 		url: globalURL+"getItems/",
 		dataType: 'text',
 		type: "POST",
